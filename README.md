@@ -9,21 +9,12 @@
 - AWS Ubuntu EC2 instance (t2.medium)
 - Install Docker
 - Install docker compose
-#
-### DEPLOYMENT:
-| Deployments    | Paths |
-| -------- | ------- |
-| Deployment using Docker and Networking | <a href="#Docker">Click me </a>     |
-| Deployment using Docker Compose | <a href="#dockercompose">Click me </a>     |
-| Deployment using Jenkins on EKS | <a href="#">Click me </a>     |
-| Deployment using Argocd on EKS| <a href="#">Click me </a>     |
 
-#
 ### STEPS TO IMPLEMENT THE PROJECT
 - **<p id="Docker">Deployment using Docker</p>**
   - Clone the repository
   ```bash
-  git clone -b DevOps https://github.com/DevMadhup/Springboot-BankApp.git
+  git clone https://github.com/Swastik232003/Java-spring-boot-project.git
   ```
   #
   - Install docker, docker compose and provide neccessary permission
@@ -42,7 +33,7 @@
   #
   - Build the Dockerfile
   ```bash
-  docker build -t madhupdevops/springboot-bankapp .
+  docker build -t bankapp .
   ```
 > [!Important]
 > Make sure to change docker build command with your DockerHub username.
@@ -59,7 +50,7 @@
   #
   - Run Application container
   ```bash
-  docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 madhupdevops/springboot-bankapp
+  docker run -itd --name BankApp -e SPRING_DATASOURCE_USERNAME="root" -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql:3306/BankDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC" -e SPRING_DATASOURCE_PASSWORD="Test@123" --network=bankapp -p 8080:8080 bankapp
   ```
   #
   - Verify deployment
